@@ -4,10 +4,16 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import Modal from './Modal'
 
 function CartModal({ open, onClose, onCheckout }) {
+  //cartItems reference function from cartStore
   const cartItems = useCartStore((state) => state.cartItems)
+
+  //removeFromCart reference function from cartStore
   const removeFromCart = useCartStore((state) => state.removeFromCart)
+
+  //clearCart reference function from cartStore
   const clearCart = useCartStore((state) => state.clearCart)
 
+  //Sum/total logic for items in a cart.
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * (item.quantity || 1),
     0,

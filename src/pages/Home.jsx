@@ -11,6 +11,7 @@ function Home() {
   return (
     <div className="space-y-10">
 
+      {/* Homepage loading logic */}
       {loading ? (
         <div className="h-72 animate-pulse rounded-3xl bg-gray-100" />
       ) : (
@@ -19,7 +20,7 @@ function Home() {
 
       <section className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900">Curated picks</h2>
+          <h2 className="text-xl font-semibold text-gray-900">Version 1 (20 curated picks)</h2>
           <Link
             to="/products"
             className="text-sm font-semibold text-orange-600 transition hover:underline"

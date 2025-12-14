@@ -1,4 +1,5 @@
 function Modal({ open, onClose, title, children, footer }) {
+  //condition to render the modal component. open expected true/false
   if (!open) return null
 
   return (

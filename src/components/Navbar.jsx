@@ -6,14 +6,17 @@ import { FaCartShopping } from "react-icons/fa6";
 import { MdOutlinePayment } from "react-icons/md";
 
 
-
+//shows the active nav / selected nav
 const navLinkStyles = ({ isActive }) =>
   `text-sm font-medium transition hover:text-orange-600 flex justify-between item-center gap-2 ${
     isActive ? 'text-orange-600' : 'text-gray-800'
   }`
 
 function Navbar({ onOpenCart, onOpenCheckout }) {
+  //cartItems reference function from cartStore.js
   const cartItems = useCartStore((state) => state.cartItems)
+
+  //cartCount reference function from cartStore.js
   const cartCount = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0)
 
   return (

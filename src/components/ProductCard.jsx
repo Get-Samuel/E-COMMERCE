@@ -3,6 +3,8 @@ import useCartStore from '../store/cartStore'
 import { formatCurrency } from '../utils/formatCurrency'
 
 function ProductCard({ product }) {
+  
+  //addToCart reference function from store/cartStore
   const addToCart = useCartStore((state) => state.addToCart)
 
   return (
@@ -27,6 +29,8 @@ function ProductCard({ product }) {
           >
             View Product
           </Link>
+
+          {/* This button adds the event item to the cart */}
           <button
             type="button"
             onClick={() => addToCart(product)}

@@ -3,9 +3,14 @@ import { formatCurrency } from '../utils/formatCurrency'
 import Modal from './Modal'
 
 function CheckoutModal({ open, onClose }) {
+
+  //cartItems reference function from cartStore
   const cartItems = useCartStore((state) => state.cartItems)
+
+  //clearCart reference function from cartStore
   const clearCart = useCartStore((state) => state.clearCart)
 
+  //Sum/total logic for items in a cart.
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * (item.quantity || 1),
     0,
@@ -70,4 +75,4 @@ function CheckoutModal({ open, onClose }) {
 }
 
 export default CheckoutModal
-
+ 

@@ -5,6 +5,7 @@ import 'swiper/css/pagination'
 import { Link } from 'react-router-dom'
 
 function HeroSlider({ products }) {
+  //product length expected truthy/falsy value
   if (!products?.length) return null
 
   return (

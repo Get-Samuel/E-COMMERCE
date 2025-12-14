@@ -6,8 +6,11 @@ import { formatCurrency } from '../utils/formatCurrency'
 function ProductDetail() {
   const { id } = useParams()
   const { product, loading } = useProduct(id)
+
+  //addToCart reference function from cartStore
   const addToCart = useCartStore((state) => state.addToCart)
 
+  //simple loading animation
   if (loading) {
     return <div className="h-80 animate-pulse rounded-3xl bg-gray-100" />
   }
