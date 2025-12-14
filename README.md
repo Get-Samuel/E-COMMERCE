@@ -19,3 +19,6 @@ Steps on How to run this project.
 
 1. Install the React + vite package on your machine ('npm create vite@latest') 
 2. Install the latest tailwindcss package. ('checkout taiwlindcss.com for the documentations)
+3. Install the latest react-router-dom package
+4. Install the latest swiper package.
+5. Install the latest zustand package.
