@@ -3,7 +3,7 @@ import HeroSlider from '../components/HeroSlider'
 import ProductCard from '../components/ProductCard'
 import { useProducts } from '../hooks/useProducts'
 
-function Home() {
+function Home({notifyAddToCart}) {
   const { products, loading } = useProducts()
   const featured = products.slice(0, 5)
   const curated = products.slice(5, 9)
@@ -37,7 +37,7 @@ function Home() {
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {curated.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} notifyAddToCart={notifyAddToCart} />
             ))}
           </div>
         )}

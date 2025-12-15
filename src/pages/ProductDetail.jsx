@@ -3,12 +3,18 @@ import { useProduct } from '../hooks/useProducts'
 import useCartStore from '../store/cartStore'
 import { formatCurrency } from '../utils/formatCurrency'
 
-function ProductDetail() {
+function ProductDetail({notifyAddToCart}) {
   const { id } = useParams()
   const { product, loading } = useProduct(id)
 
   //addToCart reference function from cartStore
   const addToCart = useCartStore((state) => state.addToCart)
+
+  //Add to cart handler
+  const handleAddToCart = (title) => {
+    addToCart(product)
+    notifyAddToCart(title);
+  }
 
   //simple loading animation
   if (loading) {
@@ -50,7 +56,7 @@ function ProductDetail() {
           <button
             type="button"
             className="btn-primary"
-            onClick={() => addToCart(product)}
+            onClick={() => handleAddToCart(product.title)}
           >
             Add to Cart
           </button>
@@ -64,4 +70,5 @@ function ProductDetail() {
 }
 
 export default ProductDetail
+
 

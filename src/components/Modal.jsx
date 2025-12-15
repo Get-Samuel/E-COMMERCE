@@ -9,7 +9,7 @@ function Modal({ open, onClose, title, children, footer }) {
           type="button"
           aria-label="Close"
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-full p-2 text-gray-500 transition hover:bg-gray-100 hover:text-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+          className="absolute text-2xl right-4 top-4 rounded-full p-2 md:px-4 text-gray-500 transition hover:bg-gray-100 hover:text-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
         >
           ✕
         </button>
@@ -27,4 +27,5 @@ function Modal({ open, onClose, title, children, footer }) {
 }
 
 export default Modal
+
 

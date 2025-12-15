@@ -87,3 +87,4 @@ function CartModal({ open, onClose, onCheckout }) {
 
 export default CartModal
 
+

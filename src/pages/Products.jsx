@@ -1,7 +1,7 @@
 import ProductCard from '../components/ProductCard'
 import { useProducts } from '../hooks/useProducts'
 
-function Products() {
+function Products({ notifyAddToCart }) {
   const { products, loading } = useProducts()
 
   return (
@@ -22,7 +22,11 @@ function Products() {
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              notifyAddToCart={notifyAddToCart}
+            />
           ))}
         </div>
       )}
@@ -31,4 +35,3 @@ function Products() {
 }
 
 export default Products
-

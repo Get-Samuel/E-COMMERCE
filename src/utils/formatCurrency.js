@@ -5,3 +5,4 @@ export const formatCurrency = (value = 0) =>
     minimumFractionDigits: 2,
   }).format(value)
 
+
